@@ -59,7 +59,7 @@ function App() {
         <Route exact path="/" component={CreateEmployee} />
         <Route exact path="/create" component={CreateEmployee} />
         <Route exact path="/list" component={EmployeeList} />
-        <Route exact path="/edit" component={EmployeeEdit} />
+        <Route exact path="/edit/:id" component={EmployeeEdit} />
 
 
       </Switch>

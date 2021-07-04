@@ -1,11 +1,13 @@
 import { Box, VStack, FormControl, FormLabel, Input, Flex, Button } from "@chakra-ui/react"
 import { useState } from "react";
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 
 
 
 function CreateEmployee() {
 
+    const history = useHistory()
     const [employee, setemployee] = useState({})
 
     function handleOnChange(event) {
@@ -25,6 +27,7 @@ function CreateEmployee() {
         console.log(employeeData)
         axios.post('http://localhost:4000/employee/create-employee', employeeData).then(res => {
             console.log(res.data)
+            history.push('/list')
         })
 
     }
