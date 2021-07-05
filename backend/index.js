@@ -33,9 +33,16 @@ app.use(bodyParser.urlencoded(
 app.use(cors());
 app.use('/employee', employeeRoute);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../build')))
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../build/index.html"))
+    })
+}
+
 //Port
 
-const port = process.env.Port || 4000
+const port = process.env.PORT || 4000
 const server = app.listen(port, () => {
     console.log('connect to port' + port)
 })

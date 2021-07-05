@@ -20,7 +20,7 @@ function EmployeeList() {
     const [employees, setEmployee] = useState([])
 
     useEffect(() => {
-        axios.get('https://shrouded-chamber-34460.herokuapp.com/employee/get-employee').then(res => {
+        axios.get('http://localhost:4000/employee/get-employee').then(res => {
             setEmployee(res.data)
 
         })

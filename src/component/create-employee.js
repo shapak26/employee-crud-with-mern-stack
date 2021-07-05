@@ -25,7 +25,7 @@ function CreateEmployee() {
         event.preventDefault()
         const employeeData = employee
         console.log(employeeData)
-        axios.post('https://shrouded-chamber-34460.herokuapp.com/employee/create-employee', employeeData).then(res => {
+        axios.post('http://localhost:4000/employee/create-employee', employeeData).then(res => {
             console.log(res.data)
             history.push('/list')
         })
