@@ -20,7 +20,7 @@ function EmployeeList() {
     const [employees, setEmployee] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/employee/get-employee').then(res => {
+        axios.get('http://shrouded-chamber-34460.herokuapp.com/employee/get-employee').then(res => {
             setEmployee(res.data)
 
         })
@@ -32,7 +32,7 @@ function EmployeeList() {
     console.log(employees)
 
     function deleteEmployee(id) {
-        axios.delete('http://localhost:4000/employee/delete-employee/' + id).then((res) => {
+        axios.delete('http://shrouded-chamber-34460.herokuapp.com/employee/delete-employee/' + id).then((res) => {
             console.log("Delete laew")
         }).catch((error) => {
             console.log(error)
