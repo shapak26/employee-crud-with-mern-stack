@@ -21,7 +21,7 @@ function EmployeeEdit() {
     console.log(employeeId)
 
     useEffect(() => {
-        axios.get('http://shrouded-chamber-34460.herokuapp.com/employee/edit-employee/' + employeeId).then(res => {
+        axios.get('http://localhost:4000/employee/edit-employee/' + employeeId).then(res => {
             setemployee(res.data)
             console.log(employee)
 
@@ -50,7 +50,7 @@ function EmployeeEdit() {
         event.preventDefault()
         const employeeData = employee
         console.log(employeeData)
-        axios.put('http://shrouded-chamber-34460.herokuapp.com/employee/edit-employee/' + employeeId, employeeData).then(res => {
+        axios.put('http://localhost:4000/employee/edit-employee/' + employeeId, employeeData).then(res => {
             console.log(res.data)
             history.push('/list')
         })
